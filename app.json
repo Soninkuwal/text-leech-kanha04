@@ -13,22 +13,22 @@
     "env": {
         "API_ID": {
             "description": "𝑬𝒏𝒕𝒆𝒓 𝒀𝒐𝒖𝒓 𝑨𝒑𝒊 𝑰𝑫",
-            "value":"20945078",
+            "value":"22569879",
             "required": true
         },
         "API_HASH": {
             "description": "𝑬𝒏𝒕𝒆𝒓 𝒀𝒐𝒖𝒓 𝑨𝒑𝒊 𝑯𝒂𝒔𝒉",
-            "value":"93f6b8ce4bb0ab61b4c7e42187f2aa64",
+            "value":"a193cad6eba083a1cbd4ecf909578159",
             "required": true
         },
         "BOT_TOKEN": {
             "description": "𝑬𝒏𝒕𝒆𝒓 𝒀𝒐𝒖𝒓 𝑩𝒐𝒕 𝑻𝒐𝒌𝒆𝒏",
-            "value":"6298609764:AAHZWQcHTq5DlmRH1TvBCRE9_gxW_5UqXnk",
+            "value":"7142805463:AAGzNdwO9jLC_F72r1NsYMpIdZOjIIPC2lI",
             "required": true
         },
         "OWNER_ID": {
             "description": "𝑼𝒔𝒆𝒓 𝑰𝑫 𝑶𝒇 𝑩𝒐𝒕 𝑶𝒘𝒏𝒆𝒓",
-            "value":"1664376941",
+            "value":"6793909122",
             "required": true
         },
         "SUDO_USERS": {
