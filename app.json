@@ -23,7 +23,7 @@
         },
         "BOT_TOKEN": {
             "description": "𝑬𝒏𝒕𝒆𝒓 𝒀𝒐𝒖𝒓 𝑩𝒐𝒕 𝑻𝒐𝒌𝒆𝒏",
-            "value":"7142805463:AAGzNdwO9jLC_F72r1NsYMpIdZOjIIPC2lI",
+            "value":"7186180912:AAGH-1DMe8MNQRHrcv-U6ZdAyIwqPGIHFTY",
             "required": true
         },
         "OWNER_ID": {
@@ -33,7 +33,7 @@
         },
         "SUDO_USERS": {
             "description": "𝑺𝒖𝒅𝒐 𝑰𝑫'𝒔 (𝒀𝒐𝒖 𝑪𝒂𝒏 𝑨𝒅𝒅 𝑴𝒖𝒍𝒕𝒊𝒑𝒍𝒆 𝑩𝒚 𝑮𝒊𝒗𝒊𝒏𝒈 𝑺𝒑𝒂𝒄𝒆)",  
-            "value":"6793909122",
+            "value":"1664376941",
             "required": true
         }
     },
