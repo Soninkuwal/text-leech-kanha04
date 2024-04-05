@@ -4,4 +4,4 @@
 
 api_id = "22569879"
 api_hash = "a193cad6eba083a1cbd4ecf909578159"
-bot_token = "7142805463:AAGzNdwO9jLC_F72r1NsYMpIdZOjIIPC2lI"
+bot_token = "7186180912:AAGH-1DMe8MNQRHrcv-U6ZdAyIwqPGIHFTY"
