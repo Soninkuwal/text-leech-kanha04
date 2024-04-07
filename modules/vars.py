@@ -2,6 +2,6 @@
 #https://t.me/Sonickuwalupdate
 # Add your details here and then deploy by clicking on HEROKU Deploy button
 
-api_id = "22569879"
-api_hash = "a193cad6eba083a1cbd4ecf909578159"
-bot_token = "7142805463:AAGzNdwO9jLC_F72r1NsYMpIdZOjIIPC2lI"
+api_id = "20945078"
+api_hash = "93f6b8ce4bb0ab61b4c7e42187f2aa64"
+bot_token = "6810817197:AAEYO4dfZgb3Lm1sQxMRpT7_W7-eZtzGFmk"
