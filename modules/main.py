@@ -174,15 +174,13 @@ async def account_login(bot: Client, m: Message):
                 
                 cc = f'**[ 🎥 ] Vid_ID: @Chatkanhabot ** {str(count).zfill(3)}. **{𝗻𝗮𝗺𝗲𝟭} ({res}) {MR} .mp4\n\n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
                 cc1 = f'**[ 📁 ] Pdf_ID: @Chatkanhabot ** {str(count).zfill(3)}. **{𝗻𝗮𝗺𝗲𝟭} {MR} .pdf \n\n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                
-               if "drive" in url:
+                if "drive" in url:
                     try:
-                        cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
-                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
-                        os.system(download_cmd)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=f'@Chatkanhabot {name}.mp4', caption=cc)
-                        count += 1
-                        os.remove(f'{name}.mp4')
+                        ka = await helper.download(url, name)
+                        copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc)
+                        count+=1
+                        os.remove(ka)
+                        time.sleep(1)
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
@@ -200,6 +198,20 @@ async def account_login(bot: Client, m: Message):
                         await m.reply_text(str(e))
                         time.sleep(e.x)
                         continue
+
+                elif ".mp4" in url:
+                    try:
+                        cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
+                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        os.system(download_cmd)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=f'@Chatkanhabot {name}.mp4', caption=cc)
+                        count += 1
+                        os.remove(f'{name}.mp4')
+                    except FloodWait as e:
+                        await m.reply_text(str(e))
+                        time.sleep(e.x)
+                        continue
+                
                 else:
                     Show = f"❊⟱𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📝 𝐍𝐚𝐦𝐞 » `{name}\n\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `😉`\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ ▂▃▅▇█▓▒░❤️ 𝐈𝐏𝐒 𝐋𝐎𝐕𝐄𝐑'𝐒🌈™ ❤️░▒▓█▇▅▃▂ @Chatkanhabot **"
                     prog = await m.reply_text(Show)
