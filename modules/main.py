@@ -172,15 +172,16 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[ 🎥 ] Vid_ID:** {str(count).zfill(3)}. **@Chatkanhabot{𝗻𝗮𝗺𝗲𝟭} ({res}) {MR} .mp4\n\n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                cc1 = f'**[ 📁 ] Pdf_ID:** {str(count).zfill(3)}. **@Chatkanhabot{𝗻𝗮𝗺𝗲𝟭} {MR} .pdf \n\n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
-                if "drive" in url:
+                cc = f'**[ 🎥 ] Vid_ID: @Chatkanhabot ** {str(count).zfill(3)}. **{𝗻𝗮𝗺𝗲𝟭} ({res}) {MR} .mp4\n\n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                cc1 = f'**[ 📁 ] Pdf_ID: @Chatkanhabot ** {str(count).zfill(3)}. **{𝗻𝗮𝗺𝗲𝟭} {MR} .pdf \n\n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**\n\n**𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐁𝐘 ➤ 🅘🅟🅢 🅛🅞🅥🅔🅡 @Chatkanhabot **'
+                elif ".mp4" in url:
                     try:
-                        ka = await helper.download(url, name)
-                        copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc)
-                        count+=1
-                        os.remove(ka)
-                        time.sleep(1)
+                        cmd = f'yt-dlp -o "{name}.mp4" "{url}"'
+                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        os.system(download_cmd)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=f'@Chatkanhabot {name}.mp4', caption=cc)
+                        count += 1
+                        os.remove(f'{name}.mp4')
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
@@ -188,12 +189,12 @@ async def account_login(bot: Client, m: Message):
                 
                 elif ".pdf" in url:
                     try:
-                        cmd = f'yt-dlp -o "@Chatkanhabot{name}.pdf" "{url}"'
+                        cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=f'@Chatkanhabot{name}.pdf', caption=cc1)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=f'@Chatkanhabot {name}.pdf', caption=cc1)
                         count += 1
-                        os.remove(f'@Chatkanhabot{name}.pdf')
+                        os.remove(f'{name}.pdf')
                     except FloodWait as e:
                         await m.reply_text(str(e))
                         time.sleep(e.x)
