@@ -49,8 +49,9 @@ python3 bot.py
 ## Botfather Commands
 ```
 start - 🦋 Bot Alive Cheking
-stop - 🛑 Upload stop
 txt - 🎬 Txt file upload
+stop - 🛑 Upload stop
+
 ```
 
 
