@@ -27,7 +27,7 @@ bot = Client(
     api_id=api_id,
     api_hash=api_hash,
     bot_token=bot_token)
-
+SUDO_USERS = [1664376941]
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
@@ -43,14 +43,14 @@ async def account_login(bot: Client, m: Message):
             ]))
 
 
-@bot.on_message(filters.command("stop"))
+@bot.on_message(filters.command("stop")&(filters.chat(SUDO_USERS)))
 async def restart_handler(_, m):
     await m.reply_text("♦ 𝐒𝐭𝐨𝐩𝐩𝐞𝐭 ♦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["txt"]))
+@bot.on_message(filters.command(["txt"])&(filters.chat(SUDO_USERS)))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text('𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐀 𝐓𝐱𝐭 𝐅𝐢𝐥𝐞 𝐒𝐞𝐧𝐝 𝐇𝐞𝐫𝐞 ⏍')
     input: Message = await bot.listen(editable.chat.id)
